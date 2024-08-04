@@ -1,0 +1,24 @@
+.arrow-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.arrow-button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.arrow-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #007bff;
+}
+
+.arrow-button:hover svg {
+  fill: #0056b3;
+}
