@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start:server": "cd server && npm start",
-    "dev:server": "cd server && npm run dev",
-    "start:client": "cd client && npm start",
-    "build:client": "cd client && npm run build",
-    "test:client": "cd client && npm test",
-    "eject:client": "cd client && npm run eject"
+    "start:server": "cd server && npm run dev",
+    "start:client": "cd client && npm start"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
