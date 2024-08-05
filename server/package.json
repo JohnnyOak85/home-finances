@@ -6,11 +6,16 @@
     "express": "^4.19.2"
   },
   "scripts": {
-    "start": "ts-node ./src/index.ts",
-    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts"
+    "start": "npx ts-node --files -r tsconfig-paths/register src/index.ts",
+    "dev": "npx ts-node-dev -r tsconfig-paths/register --respawn --transpile-only src/index.ts",
+    "verify": "npx tsc --noEmit"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^16.18.103",
     "ts-node": "^10.9.2",
-    "ts-node-dev": "^2.0.0"
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
   }
 }

@@ -3,12 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start:server": "cd server && npm run dev",
-    "start:client": "cd client && npm start"
-  },
-  "devDependencies": {
-    "typescript": "^5.5.4",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.103"
+    "start:server": "cd server && npm start",
+    "start:client": "cd client && npm start",
+    "containerize": "docker compose down && docker image prune -a -f && docker volume prune -f && docker builder prune -f && docker compose up -d"
   }
 }
