@@ -1,9 +1,12 @@
 import { readdirSync, readFileSync, writeFileSync } from "fs";
-import { join } from "path";
+import { resolve } from "path";
+
+const projectRoot = resolve(__dirname, "../../../");
+const databasePath = `${projectRoot}/database`;
 
 const listDocuments = () => {
   try {
-    const path = join(__dirname, `../../database`);
+    const path = databasePath;
     const files = readdirSync(path).map((file) => file.split(".")[0]);
 
     return files;
@@ -14,7 +17,7 @@ const listDocuments = () => {
 
 const fetchDocument = <DocType>(doc: string): DocType | null => {
   try {
-    const path = join(__dirname, `../../database/${doc}.json`);
+    const path = `${databasePath}/${doc}.json`;
     const file = readFileSync(path).toString("utf8");
 
     return JSON.parse(file);
@@ -24,7 +27,7 @@ const fetchDocument = <DocType>(doc: string): DocType | null => {
 };
 
 const saveDocument = <DocType>(docName: string, doc: DocType): void => {
-  const path = join(__dirname, `../../database/${docName}.json`);
+  const path = `${databasePath}/${docName}.json`;
   const data = JSON.stringify(doc);
 
   writeFileSync(path, data);
