@@ -1,11 +1,17 @@
-import { validationError } from "../errors/errors";
+import { notFound, validationError } from "../errors/errors";
 import { fetchDocument, saveDocument } from "../tools/orm";
 
 const docName = "contributors";
 
 const getContributors = () => {
   try {
-    return fetchDocument<ContributorDoc>(docName);
+    const doc = fetchDocument<ContributorDoc>(docName);
+
+    if (!doc) {
+      throw notFound("Contributor document does not exist");
+    }
+
+    return doc;
   } catch (error) {
     throw error;
   }
@@ -14,6 +20,11 @@ const getContributors = () => {
 const updateContributor = (contributor: Contributor) => {
   try {
     const doc = fetchDocument<ContributorDoc>(docName);
+
+    if (!doc) {
+      throw notFound("Contributor document does not exist");
+    }
+
     const index = doc.findIndex(({ name }) => contributor.name === name);
 
     if (index === -1) {
