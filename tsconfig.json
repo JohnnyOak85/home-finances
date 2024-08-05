@@ -13,7 +13,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "baseUrl": ".",
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "paths": {
+      "*": ["node_modules/*", "types/*"]
+    }
   },
   "include": ["types/types.d.ts"]
 }
