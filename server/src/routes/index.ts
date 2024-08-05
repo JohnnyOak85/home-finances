@@ -1,6 +1,6 @@
-import contributorRouter from "./contributors";
-import expenseRouter from "./expenses";
-import recordsRouter from "./records";
+import contributorRouter from "@/routes/contributors";
+import expenseRouter from "@/routes/expenses";
+import recordsRouter from "@/routes/records";
 
 const routers = [expenseRouter, contributorRouter, recordsRouter];
 

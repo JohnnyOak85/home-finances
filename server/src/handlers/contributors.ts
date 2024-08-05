@@ -1,5 +1,5 @@
-import { notFound, validationError } from "../errors/errors";
-import { fetchDocument, saveDocument } from "../tools/orm";
+import { notFound, validationError } from "@/errors/errors";
+import { fetchDocument, saveDocument } from "@/tools/orm";
 
 const docName = "contributors";
 

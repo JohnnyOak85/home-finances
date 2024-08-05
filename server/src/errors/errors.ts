@@ -1,5 +1,5 @@
-import AppErrors from "../AppErrors";
-import HttpStatusCodes from "../HttpStatusCodes";
+import AppErrors from "@/AppErrors";
+import HttpStatusCodes from "@/HttpStatusCodes";
 
 type AppError = {
   error: AppErrors;

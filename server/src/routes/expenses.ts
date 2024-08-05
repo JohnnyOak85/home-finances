@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
 
-import { getExpenses, updateExpenses } from "../handlers/expenses";
-import HttpStatusCodes from "../HttpStatusCodes";
+import { getExpenses, updateExpenses } from "@/handlers/expenses";
+import HttpStatusCodes from "@/HttpStatusCodes";
 
 const { OK, NO_CONTENT } = HttpStatusCodes;
 const router = Router();

@@ -1,6 +1,6 @@
-import { notFound } from "../errors/errors";
-import { listDocuments } from "../tools/orm";
-import { getFormattedDate } from "../tools/formatters";
+import { notFound } from "@/errors/errors";
+import { listDocuments } from "@/tools/orm";
+import { getFormattedDate } from "@/tools/formatters";
 
 const getEarliestRecord = (): ExpenseRecord => {
   try {

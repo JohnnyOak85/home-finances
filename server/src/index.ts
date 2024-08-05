@@ -1,6 +1,6 @@
 import express from "express";
-import routers from "./routes";
-import errorHandler from "./middleware/errorHandler";
+import routers from "@/routes";
+import errorHandler from "@/middleware/errorHandler";
 
 const port = 3030;
 

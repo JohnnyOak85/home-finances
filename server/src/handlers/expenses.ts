@@ -1,7 +1,7 @@
-import { notFound, validationError } from "../errors/errors";
-import { fetchDocument, listDocuments, saveDocument } from "../tools/orm";
-import { getFormattedDate } from "../tools/formatters";
-import { isValidDate } from "../validation/expense";
+import { notFound, validationError } from "@/errors/errors";
+import { fetchDocument, listDocuments, saveDocument } from "@/tools/orm";
+import { getFormattedDate } from "@/tools/formatters";
+import { isValidDate } from "@/validation/expense";
 
 const sanitizeDate = (date?: string) => {
   if (!date) {
