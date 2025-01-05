@@ -56,10 +56,10 @@ export const ExpenseProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const updateExpenses = useCallback(
     (category: string, expense: Expense) => {
-      updateDocument("expenses", { category, expense });
+      updateDocument(`expenses?date=${date}`, { category, expense });
       getExpenses();
     },
-    [getExpenses]
+    [getExpenses, date]
   );
 
   useEffect(() => {

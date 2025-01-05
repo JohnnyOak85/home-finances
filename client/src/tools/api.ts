@@ -1,4 +1,4 @@
-const host = "http://localhost:3030";
+const host = "http://192.168.1.166:6789";
 
 const getDocument = async <DocType>(resource: string): Promise<DocType> => {
   try {
@@ -20,7 +20,7 @@ const updateDocument = async <DocType>(
   body: DocType
 ): Promise<void> => {
   try {
-    const response = await fetch(`${host}/${resource}`, {
+    await fetch(`${host}/${resource}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),

@@ -2,7 +2,7 @@ import express from "express";
 import routers from "@/routes";
 import errorHandler from "@/middleware/errorHandler";
 
-const port = 3030;
+const port = 6789;
 
 const start = () => {
   try {
@@ -20,7 +20,7 @@ const start = () => {
       console.log(`API is awaiting requests on port ${port}.`);
     });
   } catch (error) {
-    throw error;
+    console.error(error);
   }
 };
 
