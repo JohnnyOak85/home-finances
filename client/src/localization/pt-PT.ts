@@ -14,6 +14,7 @@ const localization = {
   invalidName: "Por favor introduza um nome",
   invalidAmount: "Por favor introduza um valor válido",
   invalidForm: "Formulário inválido",
+  remaining: "Restante",
 };
 
 export default localization;

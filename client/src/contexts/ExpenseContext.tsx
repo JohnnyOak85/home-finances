@@ -1,15 +1,15 @@
 import {
   createContext,
-  useContext,
-  useState,
-  useEffect,
   FC,
   PropsWithChildren,
   useCallback,
+  useContext,
+  useEffect,
+  useState,
 } from "react";
+import useDate from "../hooks/useDate";
 import { getDocument, updateDocument } from "../tools/api";
 import { useErrorContext } from "./ErrorContext";
-import useDate from "../hooks/useDate";
 
 type ExpenseContextType = {
   sharedExpenses: ExpenseDoc;

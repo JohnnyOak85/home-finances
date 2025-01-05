@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
-import ExpenseItem from "./ExpenseItem";
 import localization from "../localization/pt-PT";
 import DebtList from "./DebtList";
+import ExpenseItem from "./ExpenseItem";
 
 interface ContributorEntryProps {
   contributor: Contributor;
@@ -16,7 +16,8 @@ const ContributorEntry: FC<ContributorEntryProps> = ({
 }) => {
   const [totalDebt, setTotalDebt] = useState(0);
   const [totalContribution, setTotalContribution] = useState(0);
-  const { contribution, salary } = localization;
+  const [remainingWage, setRemainingWage] = useState(0);
+  const { contribution, salary, remaining } = localization;
   const { name, wage, debts = [], savings = 0 } = contributor;
 
   useEffect(() => {
@@ -30,12 +31,18 @@ const ContributorEntry: FC<ContributorEntryProps> = ({
     setTotalContribution(totalExpense * percentage + totalDebt);
   }, [debts, savings, totalDebt, totalExpense, totalWage, wage]);
 
+  useEffect(() => {
+    const actualWage = wage > savings ? wage - savings : wage;
+    setRemainingWage(actualWage - totalContribution);
+  }, [savings, totalContribution, wage]);
+
   return (
     <div className="list">
       <h3>{name}</h3>
       <ExpenseItem name={salary} amount={wage} />
       {!!savings && <ExpenseItem name="Poupança" amount={savings} />}
       <ExpenseItem name={contribution} amount={totalContribution} />
+      <ExpenseItem name={remaining} amount={remainingWage} />
       {!!debts.length && <DebtList debtList={debts} totalDebt={totalDebt} />}
     </div>
   );
